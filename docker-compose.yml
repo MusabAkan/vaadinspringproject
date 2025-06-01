@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  springboot-app:
+    build: .
+    container_name: springboot
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Baba123*
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Host makineye bağlanmak için gerekli (özellikle Linux'ta)
+    networks:
+      - mynet
+
+networks:
+  mynet:
+
