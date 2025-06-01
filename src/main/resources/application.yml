@@ -1,5 +1,7 @@
 vaadin:
-  launch-browser: true
+  launch-browser: false
+  production-mode: true
+
 
 spring:
   datasource:
