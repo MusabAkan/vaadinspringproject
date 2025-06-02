@@ -8,6 +8,9 @@ import com.mskn.vaadinspringproject.backend.services.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl extends BaseServiceImpl<Customer> implements ICustomerService {
 
@@ -21,5 +24,10 @@ public class CustomerServiceImpl extends BaseServiceImpl<Customer> implements IC
     @Override
     protected IBaseRepository<Customer> getRepository() {
         return customerRepository;
+    }
+
+    @Override
+    public List<Customer> findByCreatedAtAfter(LocalDateTime dateTime) {
+        return customerRepository.findByCreatedAtAfter(dateTime);
     }
 }

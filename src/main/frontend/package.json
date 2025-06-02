@@ -1,0 +1,9 @@
+{
+  "name": "crm-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "lit": "^2.8.0"
+  }
+}
